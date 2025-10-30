@@ -15,6 +15,8 @@ alias zshrc="nvim ~/.zshrc"
 alias neovim="nvim ~/.config/nvim"
 alias v="nvim"
 alias V="nvim ."
+alias ss="source ~/.zshrc"
+alias c="clear"
 
 
 # per fzf
