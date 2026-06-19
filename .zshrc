@@ -13,10 +13,36 @@ alias pet="nvim ~/desktop/scola/italiano/si/petrarca/pet.tex"
 
 alias zshrc="nvim ~/.zshrc"
 alias neovim="nvim ~/.config/nvim"
+alias lam="nvim ~/Desktop/LAM"
 alias v="nvim"
 alias V="nvim ."
 alias ss="source ~/.zshrc"
 alias c="clear"
+alias lettere="nvim ~/Documents/Personal/Lettere"
+
+# Cazzata all'inizio:
+
+fortune | cowsay -r
+
+#vimwiki
+
+cdflac() {
+  shopt -s nullglob 2>/dev/null
+  files=( *.flac )
+  (( ${#files[@]} )) || { echo "No FLAC files found"; return 1; }
+
+  mkdir -p cd_flac
+  for f in *.flac; do
+    sox "$f" -r 44100 -b 16 "cd_flac/${f%.flac}.flac" rate -v dither
+  done
+}
+
+vimbiber() {
+    pdflatex "$1"
+    biber "$1"
+    pdflatex "$1"
+    pdflatex "$1"
+}
 
 
 # per fzf
